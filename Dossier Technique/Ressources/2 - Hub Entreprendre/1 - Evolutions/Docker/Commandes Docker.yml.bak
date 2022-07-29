@@ -1,0 +1,30 @@
+docker-compose up -d :démarrer l'ensemble des conteneurs en arrière-plan ;
+
+docker-compose ps :voir le statut de l'ensemble de votre stack ;
+
+docker-compose logs -f --tail 5 :afficher les logs de votre stack ;
+
+docker-compose stop :arrêter l'ensemble des services d'une stack ;
+
+docker-compose down :détruire l'ensemble des ressources d'une stack ;
+
+docker-compose config :valider la syntaxe de votre fichier docker-compose.yml
+
+//Lancé un conteneur à partir d'une image
+
+docker images : Liste les images sur ton PC
+
+docket pull : telecharger une image depuis un dossier existant ou depuis le docker hub
+
+docker run -it -d p 8080:80 <nom de l'image> : lance le docker (it pour interactif)
+	it pour interactif
+	-d pour détaché => tourne en arriere plan (permet de continuer à utiliser la console pendant que votre conteneur tourne sur un autre processus)
+	-p pour définir l'utilisation de ports. nous lui avons demandé de transférer le trafic du port 8080 vers le port 80 du conteneur
+
+docker ps : liste les dockers lancés avec leurs id
+
+docker stop <id du docker> : stop le docker avec l'id
+
+docker rm <ID_RETOURNÉ_LORS_DU_DOCKER_RUN> : va détruire le conteneur et son contenu
+
+docker system prune : supprimer l'ensemble des ressources manuelles dans Docker

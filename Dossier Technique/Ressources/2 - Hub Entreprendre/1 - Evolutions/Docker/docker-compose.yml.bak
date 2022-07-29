@@ -1,0 +1,38 @@
+version: '2.6'
+services:
+  db:
+    image: postgres:10-bullseye
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dev
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+
+ # maildev:
+  #  image: maildev/maildev
+  #  ports:
+  #    - '1280:80'
+      
+###########################
+# Setup the maildev container
+# Lancer l'URL http://localhost:8003/#/ et c'est tout
+###########################
+
+
+#docker run -p 1080:1080 --name maildev maildev/maildev
+
+        
+volumes:
+  db:
+    driver: local
+    
+    
+    
+    
+    #docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.17.5
+    
+    
